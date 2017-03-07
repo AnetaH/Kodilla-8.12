@@ -59,10 +59,6 @@ function newGame() {
   }
 }
 
-function playerPick(playerPick) {
-  console.log(playerPick);
-}
-
 function getComputerPick() {
   var possiblePicks = ['kamień', 'papier', 'nożyce'];
   return possiblePicks[Math.floor(Math.random()*3)];
@@ -105,6 +101,7 @@ function checkRoundWinner(playerPick, computerPick) {
       computer.score++;
   }
   setGamePoints();
+  gameWinner();
 }
 
 function setGamePoints() {
@@ -113,12 +110,22 @@ function setGamePoints() {
 }
 
 function gameWinner() {
-  if (player.score == 10) {
-  	alert(player.name + 'Zwyciężyłeś! Koniec gry.');
-  	
+  var maxScore = 10,
+      playerWon = player.score === maxScore;
+
+  if (playerWon || computer.score === maxScore) {
+    alert(playerWon ? 'Zwycięstwo! ' + player.name + ' - jesteś wygranym!' : player.name + 'Przegrałeś!');
+    endGame();
   }
-  if (computer.score == 10) {
-  	alert(player.name + 'Przegrałeś! Koniec gry.');
-  	
+}
+
+function endGame() {
+  if (confirm("Nowa gra?")) {
+    newGame();
+  }
+
+  else {
+    gameState = 'notStarted';
+	setGameElements();
   }
 }
