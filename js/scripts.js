@@ -6,9 +6,9 @@ var pickRock = document.getElementById('js-playerPick_rock'),
     pickPaper = document.getElementById('js-playerPick_paper'),
     pickScissors = document.getElementById('js-playerPick_scissors');
 
-pickRock.addEventListener('click', function() { playerPick('kamień') });
-pickPaper.addEventListener('click', function() { playerPick('papier') });
-pickScissors.addEventListener('click', function() { playerPick('nożyce') });
+pickRock.addEventListener('click', function() { playerPick('kamień'); });
+pickPaper.addEventListener('click', function() { playerPick('papier'); });
+pickScissors.addEventListener('click', function() { playerPick('nożyce'); });
 
 var gameState = 'notStarted',  //started // ended
     player = {
@@ -101,7 +101,7 @@ function checkRoundWinner(playerPick, computerPick) {
       computer.score++;
   }
   setGamePoints();
-  gameWinner();
+  chckGameWinner();
 }
 
 function setGamePoints() {
@@ -109,7 +109,7 @@ function setGamePoints() {
   computerPointsElem.innerHTML = computer.score;
 }
 
-function gameWinner() {
+function chckGameWinner() {
   var maxScore = 10,
       playerWon = player.score === maxScore;
 
@@ -123,9 +123,8 @@ function endGame() {
   if (confirm("Nowa gra?")) {
     newGame();
   }
-
   else {
     gameState = 'notStarted';
-	setGameElements();
+    setGameElements();
   }
 }
