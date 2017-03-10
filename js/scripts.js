@@ -101,7 +101,7 @@ function checkRoundWinner(playerPick, computerPick) {
       computer.score++;
   }
   setGamePoints();
-  chckGameWinner();
+  checkGameWinner();
 }
 
 function setGamePoints() {
@@ -109,7 +109,7 @@ function setGamePoints() {
   computerPointsElem.innerHTML = computer.score;
 }
 
-function chckGameWinner() {
+function checkGameWinner() {
   var maxScore = 10,
       playerWon = player.score === maxScore;
 
