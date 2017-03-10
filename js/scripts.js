@@ -114,7 +114,7 @@ function checkGameWinner() {
       playerWon = player.score === maxScore;
 
   if (playerWon || computer.score === maxScore) {
-    alert(playerWon ? 'Zwycięstwo! ' + player.name + ' - jesteś wygranym!' : player.name + '-Przegrałeś!');
+    alert(playerWon ? 'Zwycięstwo! ' + player.name + ' - jesteś wygranym!' : player.name + ' - Przegrałeś!');
     endGame();
   }
 }
