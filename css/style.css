@@ -1,5 +1,5 @@
 body {
-  background-image: url(https://cdn.pixabay.com/photo/2014/02/10/19/17/the-stones-263661_960_720.jpg);
+  background-image: url('../images/background.jpg');
   background-position: center;
   background-repeat: no-repeat;
 }
